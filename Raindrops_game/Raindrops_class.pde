@@ -23,10 +23,12 @@ class Raindrops {
       acc = new PVector (0, .05);
     }
   }
- // void checkCatcher(Catcher c) {
-   // if (dist(loc.x, loc.y, c.loc.x, c.loc.y) < d/2 + c.d/2);
-   // vel.set(0, 0);
-    //acc.set(0, 0);
-  //}
+  void checkCatcher(Catcher c) {
+    if (loc.dist(c.loc) < d/2 + c.d/2) {
+      //print("touch!!! ");
+      vel.set(0, 0);
+      acc.set(0, 0);
+    }
+  }
 }
 
