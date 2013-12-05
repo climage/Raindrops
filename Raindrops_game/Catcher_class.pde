@@ -13,7 +13,7 @@ class Catcher {
   void update() {
     loc.set(mouseX-50, height - d*2);
   }
-  boolean catchdrop(Raindrop drop){
+  boolean catchDrop(Raindrops drop){
     if (loc.dist(drop.loc) <d/2 + drop.d/2) {
       return true;
     }

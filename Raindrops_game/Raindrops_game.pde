@@ -13,15 +13,12 @@ void setup() {
   catcher = new Catcher();
 }
 void draw() {
-  background(0);
+  background(255);
   catcher.display();
-  for (int i = 0; i < drops.length; i++) {
+  for (int i = 0; i < index; i++) {
     drops[i].circle();
     drops[i].move();
-    //if (drops[i].loc.y > height + drops[i].d) { 
-      //drops[i].reset();
-    //}
-    if (catcher.catchdrop(drops[i]) == true) {
+    if (catcher.catchDrop(drops[i]) == true) {
       drops[i].goAway();
       score++; 
       threshold-=50; 
