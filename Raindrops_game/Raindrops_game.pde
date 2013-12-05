@@ -1,19 +1,23 @@
-Raindrops[] drops = new Raindrops[10];
+Raindrops[] drops = new Raindrops[300];
 Catcher catcher;
 int score;
 int oldTime = 0;
 int threshold = 3000;
 int index;
+PImage Background;
 
 void setup() {
-  size(500, 500);
+  Background = loadImage("Rain.gif");
+  size(Background.width, Background.height);
   for (int i = 0; i < drops.length; i++) {
     drops[i] = new Raindrops();
   }
   catcher = new Catcher();
 }
 void draw() {
-  background(255);
+  textSize(50);
+  background(Background);
+  text(score, 50,100); 
   catcher.display();
   for (int i = 0; i < index; i++) {
     drops[i].circle();
@@ -21,7 +25,7 @@ void draw() {
     if (catcher.catchDrop(drops[i]) == true) {
       drops[i].goAway();
       score++; 
-      threshold-=50; 
+      threshold-=60; 
     }
   }
     catcher.display();

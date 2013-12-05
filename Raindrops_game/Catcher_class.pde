@@ -3,15 +3,15 @@ class Catcher {
   int d;
   
   Catcher() {
-    d = 25;
-    loc = new PVector (mouseX, height - d);
+    d = 50;
+    loc = new PVector (mouseX, height);
   }
   void display() {
     fill(31,27,167);
-    ellipse(loc.x, loc.y, d, d);
+    ellipse(loc.x, loc.y, d, d/2);
   }
   void update() {
-    loc.set(mouseX-50, height - d*2);
+    loc.set(mouseX, height - d*2);
   }
   boolean catchDrop(Raindrops drop){
     if (loc.dist(drop.loc) <d/2 + drop.d/2) {
