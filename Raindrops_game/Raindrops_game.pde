@@ -25,7 +25,7 @@ void draw() {
     if (catcher.catchDrop(drops[i]) == true) {
       drops[i].goAway();
       score++; 
-      threshold-=60; 
+      threshold-=40; 
     }
   }
     catcher.display();
