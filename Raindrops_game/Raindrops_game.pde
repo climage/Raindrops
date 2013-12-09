@@ -18,7 +18,7 @@ void setup() {
 }
 void draw() {
   textSize(50);
-  background(Background); 
+  background(0); 
   startbutton (width/2, height/2, 100, 100);
   catcher.display();
   if (run == true) {
@@ -28,7 +28,7 @@ void draw() {
       if (catcher.catchDrop(drops[i]) == true) {
         drops[i].goAway();
         score++; 
-        threshold-=40;
+        threshold-=45;
       }
     }
     catcher.display();
@@ -46,12 +46,12 @@ void draw() {
     ellipse(width/2, height/2, 100, 100);
   }
 }
-  void startbutton(int x, int y, int d, int d2) {
-    ellipse(x, y, d, d2);
-    background(Background);
-    text(score, 50, 100);
-    if (mouseX > width/2 - d/2 && mouseX < width/2 + d/2 && mouseY > height/2 - d2/2 && mouseY < height/2 + d2/2 && mousePressed) {
-      run = true;
-    }
+void startbutton(int x, int y, int d, int d2) {
+  ellipse(x, y, d, d2);
+  background(Background);
+  text(score, 50, 100);
+  if (mouseX > width/2 - d/2 && mouseX < width/2 + d/2 && mouseY > height/2 - d2/2 && mouseY < height/2 + d2/2 && mousePressed) {
+    run = true;
   }
+}
 
