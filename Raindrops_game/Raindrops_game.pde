@@ -21,10 +21,11 @@ void draw() {
   background(Background);
   text(score, 50, 100); 
   catcher.display();
+  startbutton (width/2, height/2, 100,100);
 }
-void start(int d) {
-  ellipse(width/2, height/2, d, d);
-  if (mouseX > width/2 - d/2 && mouseX < width/2 + d/2 && mouseY > height/2 - d/2 && mouseY + d/2 && mousePressed) {
+void startbutton( int x, int y, int d, int d2) {
+  ellipse(x, y, d, d2);
+  if (mouseX > width/2 - d/2 && mouseX < width/2 + d/2 && mouseY > height/2 - d2/2 && mouseY + d2/2 && mousePressed) {
     run = true; 
     if (run = true) {
       for (int i = 0; i < index; i++) {
