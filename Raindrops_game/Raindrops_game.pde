@@ -10,7 +10,7 @@ boolean run;
 void setup() {
   Background = loadImage("Rain.gif");
   size(Background.width, Background.height);
-  for (int i = 0; i < drops.length; i++) {
+  for (int i = 0; i < index; i++) {
     drops[i] = new Raindrops();
   }
   catcher = new Catcher();
@@ -18,14 +18,17 @@ void setup() {
 }
 void draw() {
   textSize(50);
-  background(Background);
-  text(score, 50, 100); 
-  catcher.display();
+  background(Background); 
   startbutton (width/2, height/2, 100,100);
+  catcher.display();
+  
 }
 void startbutton( int x, int y, int d, int d2) {
+  fill (16,255,13);
   ellipse(x, y, d, d2);
-  if (mouseX > width/2 - d/2 && mouseX < width/2 + d/2 && mouseY > height/2 - d2/2 && mouseY + d2/2 && mousePressed) {
+  background(Background);
+  text(score, 50, 100);
+  if (mouseX > width/2 - d/2 && mouseX < width/2 + d/2 && mouseY > height/2 - d2/2 && mouseY < height/2 + d2/2 && mousePressed) {
     run = true; 
     if (run = true) {
       for (int i = 0; i < index; i++) {
@@ -51,6 +54,7 @@ void startbutton( int x, int y, int d, int d2) {
     run = false;
     background(Background);
     ellipse(width/2, height/2, d, d);
+    drops[i].reset();
   }
 }
 
