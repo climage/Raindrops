@@ -8,7 +8,7 @@ class Raindrops {
     vel = new PVector (0, random(1, 2));
     acc = new PVector (0, .005);
   }
-  void circle() {
+  void drop() {
     fill(255);
     ellipse(loc.x, loc.y, d-20, d-10);
   }
