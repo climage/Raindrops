@@ -54,7 +54,7 @@ void startbutton( int x, int y, int d, int d2) {
     run = false;
     background(Background);
     ellipse(width/2, height/2, d, d);
-    drops[i].reset();
+   // drops[i].reset();
   }
 }
 
