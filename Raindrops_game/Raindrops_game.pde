@@ -1,5 +1,5 @@
 //This is an array that allows multiples of the same object to be created. 
-// In this instance, hundreds of raindrops are being easily made. 
+//In this instance, hundreds of raindrops are being easily made. 
 Raindrops[] drops = new Raindrops[500];
 Catcher catcher;
 int score;
@@ -34,7 +34,8 @@ void draw() {
     catcher.display();
     catcher.update();
     // This code below enables a timer that drops a raindrop every 3 seconds.
-    // As more raindrops are caught, due to the variable threshold, the time for each new raindrop decreases, making it drop faster. 
+    // As more raindrops are caught, due to the variable threshold, the time 
+    // for each new raindrop decreases, making it drop faster. 
     if (millis()- oldTime > threshold) {
       if (index < drops.length) {
         index++;
@@ -42,7 +43,11 @@ void draw() {
       }
     }
   }
-  // If this else statement was not here, the game will run but the start button will not show up and its location would have to guessed.
+  if (lives >= 15){
+      run = false;
+      }  
+  // If this else statement was not here, the game will run but 
+  //the start button will not show up and its location would have to be guessed.
   else {
     run = false;
     background(0);
@@ -52,7 +57,8 @@ void draw() {
     text("Start", width/2-20, height/2+5);
   }
 }
-// This void makes a start button so until it is pressed and a boolean run is made true, the game will not begin. 
+// This void makes a start button so until it is pressed and a 
+// boolean run is made true, the game will not begin. 
 void startbutton(int x, int y, int d, int d2) {
   ellipse(x, y, d, d2);
   background(Background);
