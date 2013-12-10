@@ -16,11 +16,7 @@ class Raindrops {
     vel.add(acc);
     loc.add(vel);
   }
-  void reset() {
-    loc.set(random(width), -d);
-    vel.set(0, random(1,2));
-    acc.set(0,.005);
-  }
+  // This void makes the raindrops, when they come in contact with the catcher which causes the boolean catchDrop true, disappear.
   void goAway() {
     loc.set(height*2, 0); 
     vel.set(0, 0);
