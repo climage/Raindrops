@@ -1,7 +1,7 @@
+int lives;
 class Raindrops {  
   PVector loc, vel, acc;
   int d;
-  int lives;
 
   Raindrops() {
     d = 25;

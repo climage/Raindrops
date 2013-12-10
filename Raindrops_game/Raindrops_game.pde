@@ -42,10 +42,12 @@ void draw() {
         oldTime = millis();
       }
     }
-  }
-  if (lives >= 15){
+    if (lives >= 15){
       run = false;
-      }  
+      background(0);
+      text("You Lose", width/2, height/2);
+      }
+  }  
   // If this else statement was not here, the game will run but 
   //the start button will not show up and its location would have to be guessed.
   else {
