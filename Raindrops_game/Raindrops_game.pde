@@ -1,5 +1,6 @@
 //This is an array that allows multiples of the same object to be created. 
 //In this instance, hundreds of raindrops are being easily made. 
+
 Raindrops[] drops = new Raindrops[500];
 Catcher catcher;
 int score;
@@ -8,6 +9,8 @@ int threshold = 3000;
 int index;
 PImage Background;
 boolean run;
+int deathCount = 0;
+boolean death;
 
 void setup() {
   Background = loadImage("Rain.gif");
@@ -19,37 +22,44 @@ void setup() {
   run = false;
 }
 void draw() {
+  println("deathcount: " + deathCount);
   startbutton (width/2, height/2, 100, 100);
   catcher.display();
-  if (run == true) {
+  if (death) {
+    background(0);
+    textSize(50);
+    fill(255);
+    text("You Lose", width/2-100, height/2);
+    text("GoodBye!", width/2 - 100, height/2 +100);
+  }
+  else if (run == true) {
     for (int i = 0; i < index; i++) {
       drops[i].drop();
       drops[i].move();
       if (catcher.catchDrop(drops[i]) == true) {
         drops[i].goAway();
-        score++; 
+        score = score + 2; 
         threshold-=50;
       }
     }
     catcher.display();
     catcher.update();
+    lose();
     // This code below enables a timer that drops a raindrop every 3 seconds.
     // As more raindrops are caught, due to the variable threshold, the time 
     // for each new raindrop decreases, making it drop faster. 
+
     if (millis()- oldTime > threshold) {
       if (index < drops.length) {
         index++;
         oldTime = millis();
       }
     }
-    if (lives >= 15){
-      run = false;
-      background(0);
-      text("You Lose", width/2, height/2);
-      }
   }  
+
   // If this else statement was not here, the game will run but 
   //the start button will not show up and its location would have to be guessed.
+
   else {
     run = false;
     background(0);
@@ -59,17 +69,27 @@ void draw() {
     text("Start", width/2-20, height/2+5);
   }
 }
+
 // This void makes a start button so until it is pressed and a 
 // boolean run is made true, the game will not begin. 
+
 void startbutton(int x, int y, int d, int d2) {
   ellipse(x, y, d, d2);
   background(Background);
-  fill(97,56,185);
+  fill(97, 56, 185);
   textSize(50);
   text(score, 50, 100);
-  fill(255,0,0);
+  fill(255,10,10);
+  text(deathCount, width - 50, 100);
+  fill(255, 0, 0);
   if (mouseX > width/2 - d/2 && mouseX < width/2 + d/2 && mouseY > height/2 - d2/2 && mouseY < height/2 + d2/2 && mousePressed) {
     run = true;
+  }
+}
+
+void lose() {
+  if (deathCount >= 5) {
+    death = true;
   }
 }
 

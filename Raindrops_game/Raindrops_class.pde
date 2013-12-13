@@ -1,4 +1,3 @@
-int lives;
 class Raindrops {  
   PVector loc, vel, acc;
   int d;
@@ -16,14 +15,16 @@ class Raindrops {
   void move() {
     vel.add(acc);
     loc.add(vel);
-    if (loc.y > height){
-    lives ++;
+    if (loc.y > height) {
+      deathCount++;
+      goAway();
     }
   }
   // This void makes the raindrops, when they come in contact with the catcher which causes the boolean catchDrop true, disappear.
   void goAway() {
-    loc.set(height*2, 0); 
+    loc.set(width*5,0); 
     vel.set(0, 0);
     acc.set(0, 0);
   }
 }
+
