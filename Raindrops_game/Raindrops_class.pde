@@ -6,7 +6,7 @@ class Raindrops {
     d = 25;
     loc = new PVector (random(width), -d);
     vel = new PVector (0, random(1, 2));
-    acc = new PVector (0, .005);
+    acc = new PVector (0, .01);
   }
   void drop() {
     fill(255);

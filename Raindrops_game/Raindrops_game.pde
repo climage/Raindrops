@@ -22,7 +22,6 @@ void setup() {
   run = false;
 }
 void draw() {
-  println("deathcount: " + deathCount);
   startbutton (width/2, height/2, 100, 100);
   catcher.display();
   if (death) {
@@ -30,7 +29,7 @@ void draw() {
     textSize(50);
     fill(255);
     text("You Lose", width/2-100, height/2);
-    text("GoodBye!", width/2 - 100, height/2 +100);
+    text("GoodBye!", width/2 - 105, height/2 +100);
   }
   else if (run == true) {
     for (int i = 0; i < index; i++) {
