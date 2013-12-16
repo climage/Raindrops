@@ -21,7 +21,7 @@ void setup() {
   }
   catcher = new Catcher();
   run = false;
-  for (int i = 0; i <poi.length; i++){
+  for (int i = 0; i <poi.length; i++) {
     poi[i] = new Poison();
   }
 }
@@ -46,7 +46,7 @@ void draw() {
         score = score + 2; 
         threshold-=50;
       }
-      if (catcher.catchPoi(poi[i] == true) { 
+      if (catcher.catchpoi(poi[i]) == true  ) { 
         poi[i].Away();
         score = score - 3;
       }
@@ -54,6 +54,7 @@ void draw() {
     catcher.display();
     catcher.update();
     lose();
+
     // This code below enables a timer that drops a raindrop every 3 seconds.
     // As more raindrops are caught, due to the variable threshold, the time 
     // for each new raindrop decreases, making it drop faster. 
@@ -87,8 +88,9 @@ void startbutton(int x, int y, int d, int d2) {
   background(Background);
   fill(97, 56, 185);
   textSize(50);
+  text("Score", 25,50);
   text(score, 50, 100);
-  fill(255,10,10);
+  fill(255, 10, 10);
   text(deathCount, width - 50, 100);
   fill(255, 0, 0);
   if (mouseX > width/2 - d/2 && mouseX < width/2 + d/2 && mouseY > height/2 - d2/2 && mouseY < height/2 + d2/2 && mousePressed) {
