@@ -1,6 +1,7 @@
 //This is an array that allows multiples of the same object to be created. 
 //In this instance, hundreds of raindrops are being easily made. 
 
+Poison[] poi = new Poison[1000];
 Raindrops[] drops = new Raindrops[500];
 Catcher catcher;
 int score;
@@ -20,6 +21,9 @@ void setup() {
   }
   catcher = new Catcher();
   run = false;
+  for (int i = 0; i <poi.length; i++){
+    poi[i] = new Poison();
+  }
 }
 void draw() {
   startbutton (width/2, height/2, 100, 100);
@@ -35,10 +39,16 @@ void draw() {
     for (int i = 0; i < index; i++) {
       drops[i].drop();
       drops[i].move();
+      poi[i].display();
+      poi[i].goDown();
       if (catcher.catchDrop(drops[i]) == true) {
         drops[i].goAway();
         score = score + 2; 
         threshold-=50;
+      }
+      if (catcher.catchPoi(poi[i] == true) { 
+        poi[i].Away();
+        score = score - 3;
       }
     }
     catcher.display();

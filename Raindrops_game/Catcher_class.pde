@@ -23,5 +23,13 @@ class Catcher {
       return false;
     }
   }
+  boolean catchpoi(Poison poi) {
+    if (loc.dist(poi.loc) < d/2 + poi.d/2) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
 }
 
