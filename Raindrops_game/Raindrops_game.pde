@@ -77,6 +77,7 @@ void draw() {
     textSize(20);
     fill(255);
     text("Start", width/2-20, height/2+5);
+    text("Don't catch the green", width/2, height/3);
   }
 }
 
