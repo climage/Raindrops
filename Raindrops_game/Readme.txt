@@ -24,3 +24,12 @@ a poisonous (green) raindrop is caught, the score will decrease by 3.
 
 If the raindrop is caught, the raindrops will disappear. 
 
+Bug / Issues
+============
+
+If the raindrop becomes leveled with the catcher, it sometimes will not allow 
+the raindrop to be caught. The raindrop must be above or falling to the relative 
+middle of the catcher or it will not be caught. 
+
+Sometimes the Poisonous raindrop and the regular raindrop are so close together 
+that it is impossible to catch one without catching the other, decreasing the score. 
