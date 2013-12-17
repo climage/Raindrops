@@ -34,6 +34,8 @@ void draw() {
     fill(255);
     text("You Lose", width/2-100, height/2);
     text("GoodBye!", width/2 - 105, height/2 +100);
+    text("Score", width/2 - 100, height/2 -100); 
+    text(score, width/2+50, height/2 -100);
   }
   else if (run == true) {
     for (int i = 0; i < index; i++) {
