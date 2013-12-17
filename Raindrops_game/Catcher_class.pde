@@ -3,7 +3,7 @@ class Catcher {
   PImage Pail;
   int d;
   Catcher() {
-    d = 60;
+    d = 65;
     Pail = loadImage("APail.gif"); 
     size = new PVector (60, 80);
     loc = new PVector (mouseX, height);

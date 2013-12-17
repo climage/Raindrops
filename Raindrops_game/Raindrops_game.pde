@@ -77,7 +77,9 @@ void draw() {
     textSize(20);
     fill(255);
     text("Start", width/2-20, height/2+5);
-    text("Don't catch the green", width/2, height/3);
+    fill(0,255,27);
+    textSize(10);
+    text("Don't catch the green", width/2-50, height/3);
   }
 }
 
@@ -92,6 +94,9 @@ void startbutton(int x, int y, int d, int d2) {
   text("Score", 25,50);
   text(score, 50, 100);
   fill(255, 10, 10);
+  textSize(20);
+  text("Death Count", width-140, 50);
+  textSize(50);
   text(deathCount, width - 50, 100);
   fill(255, 0, 0);
   if (mouseX > width/2 - d/2 && mouseX < width/2 + d/2 && mouseY > height/2 - d2/2 && mouseY < height/2 + d2/2 && mousePressed) {
