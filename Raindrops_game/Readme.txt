@@ -14,9 +14,13 @@ Create a Raindrops Class
 
 Create a Catcher Class
 
-Make a CheckCatcher Function in Raindrops class so when
-the catcher intersects with the raindrops, it will stop.
+Create a Poison Class
 
-After a raindrop is stopped, the score will increase.
+Make a CheckCatcher Function in Catcher class so when
+the catcher intersects with both types of raindrops, it will stop.
+
+After a raindrop is caught, the score will increase by 2 but if 
+a poisonous (green) raindrop is caught, the score will decrease by 3.
 
 If the raindrop is caught, the raindrops will disappear. 
+
