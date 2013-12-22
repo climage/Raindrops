@@ -79,7 +79,7 @@ void draw() {
     textSize(20);
     fill(255);
     text("Start", width/2-20, height/2+5);
-    fill(0,255,27);
+    fill(0, 255, 27);
     textSize(10);
     text("Don't catch the green", width/2-50, height/3);
   }
@@ -93,7 +93,7 @@ void startbutton(int x, int y, int d, int d2) {
   background(Background);
   fill(97, 56, 185);
   textSize(50);
-  text("Score", 25,50);
+  text("Score", 25, 50);
   text(score, 50, 100);
   fill(255, 10, 10);
   textSize(20);
