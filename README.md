@@ -1,11 +1,12 @@
 Raindrops Game
 ==============
 
-A raindrop will fall from the top of the screen and will continue to fall 
-again unless stopped by the catcher. The catcher will cause the 
-raindrop to stop, the score to increase, and the raindrop to disappear. 
-Eventually, it will be modified where the player can lose if a raindrop
-manages to fall to the ground. 
+After being started, a raindrop will fall from the top of the screen 
+and will continue to fall again unless stopped by the catcher. The 
+catcher will cause the raindrop to stop, the score to increase, and 
+the raindrop to disappear. After 5 raindrops manage to fall to the 
+ground, the player will lose and the lose screen will be displayed. 
+
 
 Raindrops Steps
 ===============
@@ -32,4 +33,5 @@ the raindrop to be caught. The raindrop must be above or falling to the relative
 middle of the catcher or it will not be caught. 
 
 Sometimes the Poisonous raindrop and the regular raindrop are so close together 
-that it is impossible to catch one without catching the other, decreasing the score.
+that it is impossible to catch one without catching the other, decreasing the score
+but not increasing the death count.
