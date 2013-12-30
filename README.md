@@ -25,6 +25,11 @@ a poisonous (green) raindrop is caught, the score will decrease by 3.
 
 If the raindrop is caught, the raindrops will disappear. 
 
+Create Start Screen
+
+Create Lose Screen by counting number of raindrops missed by the catcher.
+
+
 Bug / Issues
 ============
 
